@@ -24,8 +24,17 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: 'stable'
+
       - name: Set up Android SDK
         uses: android-actions/setup-android@v3
+
+      - name: Accept Android Licenses
+        run: |
+          yes | flutter doctor --android-licenses || true
 
       - name: Install Dependencies
         run: |
@@ -34,7 +43,7 @@ jobs:
 
       - name: Build Android APK
         run: |
-          yes | flet build apk --verbose
+          flet build apk --verbose
 
       - name: Upload APK Artifact
         uses: actions/upload-artifact@v4
