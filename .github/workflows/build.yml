@@ -8,8 +8,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      FLET_FORCE_YES: "true" # यह लाइन ही इस एरर को जड़ से खत्म करेगी
 
     steps:
       - name: Checkout repository
@@ -36,7 +34,7 @@ jobs:
 
       - name: Accept Android Licenses
         run: |
-          yes | flutter doctor --android-licenses || true
+          printf "y\ny\ny\ny\ny\ny\ny\n" | flutter doctor --android-licenses || true
 
       - name: Install Dependencies
         run: |
@@ -45,7 +43,7 @@ jobs:
 
       - name: Build Android APK
         run: |
-          flet build apk --verbose
+          printf "y\n" | flet build apk --verbose
 
       - name: Upload APK Artifact
         uses: actions/upload-artifact@v4
