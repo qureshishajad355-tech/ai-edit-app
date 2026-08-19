@@ -8,6 +8,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      FLET_FORCE_YES: "true" # यह लाइन ही इस एरर को जड़ से खत्म करेगी
 
     steps:
       - name: Checkout repository
@@ -43,7 +45,7 @@ jobs:
 
       - name: Build Android APK
         run: |
-          flet build apk -y --verbose
+          flet build apk --verbose
 
       - name: Upload APK Artifact
         uses: actions/upload-artifact@v4
