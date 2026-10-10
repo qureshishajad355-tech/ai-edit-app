@@ -3,120 +3,134 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Download App</title>
+    <title>AI Edit App - Download</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            text-align: center;
-            background-color: #f4f4f9;
+            background-color: #f4f7f6;
             margin: 0;
-            padding: 20px;
+            padding: 10px;
+            text-align: center;
+        }
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            font-size: 20px;
+        }
+        p {
+            color: #666;
+            font-size: 14px;
         }
         .ad-container {
-            margin: 15px auto;
-            min-height: 250px;
+            margin: 8px 0;
+            padding: 5px;
+            background: #fafafa;
+            border: 1px dashed #ddd;
+            border-radius: 5px;
+            max-height: 90px;
+            overflow: hidden;
         }
-        .download-box {
-            margin: 30px 0;
+        #download-section {
+            display: none;
+            margin: 15px 0;
         }
-        #downloadBtn {
-            background-color: #cccccc;
-            color: white;
-            border: none;
-            padding: 15px 30px;
-            font-size: 18px;
-            font-weight: bold;
-            border-radius: 8px;
-            cursor: not-allowed;
-            transition: background-color 0.3s;
-        }
-        #downloadBtn.active {
+        .download-btn {
             background-color: #28a745;
-            cursor: pointer;
-        }
-        #timerText {
+            color: white;
+            padding: 12px 25px;
             font-size: 16px;
-            color: #555;
-            margin-bottom: 10px;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 4px 6px rgba(40, 167, 69, 0.3);
+        }
+        .download-btn:hover {
+            background-color: #218838;
+        }
+        #timer {
+            font-weight: bold;
+            color: #d9534f;
+            font-size: 18px;
         }
     </style>
 </head>
 <body>
 
-    <h1>अपने ऐप का आनंद लें</h1>
-    <p>कृपया नीचे दिए गए टाइमर के पूरा होने का इंतज़ार करें।</p>
+<div class="container">
+    <h1>AI Edit App डाउनलोड करने के लिए तैयार है</h1>
+    <p>कृपया <strong><span id="timer">8</span> सेकंड</strong> इंतज़ार करें।</p>
 
-    <!-- टॉप बैनर ऐड -->
+    <!-- 8 Sec Timer & Download Button Section (Placed near top as requested) -->
+    <div id="download-section">
+        <p style="color: green; font-weight: bold; margin: 5px;">आपका लिंक तैयार है!</p>
+        <a id="final-link" href="#" class="download-btn" target="_blank">डाउनलोड करें (Download)</a>
+    </div>
+
+    <!-- Adsterra Banner Ad 1 -->
     <div class="ad-container">
-        <script>
-          atOptions = {
-            'key' : '4af63506f28601b29efaa5fa9bd07f42',
-            'format' : 'iframe',
-            'height' : 250,
-            'width' : 300,
-            'params' : {}
-          };
-        </script>
-        <script src="https://bicea.org/22/4af63506f28601b29efaa5fa9bd07f42"></script>
+        <!-- Ad 1 Code Here -->
+        <p style="font-size:10px; color:#999; margin:0;">Ad 1</p>
     </div>
 
-    <!-- बीच का बैनर ऐड -->
+    <!-- Adsterra Banner Ad 2 -->
     <div class="ad-container">
-        <script>
-          atOptions = {
-            'key' : '4af63506f28601b29efaa5fa9bd07f42',
-            'format' : 'iframe',
-            'height' : 250,
-            'width' : 300,
-            'params' : {}
-          };
-        </script>
-        <script src="https://bicea.org/22/4af63506f28601b29efaa5fa9bd07f42"></script>
+        <!-- Ad 2 Code Here -->
+        <p style="font-size:10px; color:#999; margin:0;">Ad 2</p>
     </div>
 
-    <!-- डाउनलोड बटन और 8 सेकंड का टाइमर -->
-    <div class="download-box">
-        <div id="timerText">डाउनलोड लिंक <b>8</b> सेकंड में तैयार हो जाएगा...</div>
-        <a id="downloadLink" href="#" style="text-decoration: none;" target="_blank">
-            <button id="downloadBtn" disabled>डाउनलोड ऐप</button>
-        </a>
-    </div>
-
-    <!-- बॉटम बैनर ऐड -->
+    <!-- Adsterra Banner Ad 3 -->
     <div class="ad-container">
-        <script>
-          atOptions = {
-            'key' : '4af63506f28601b29efaa5fa9bd07f42',
-            'format' : 'iframe',
-            'height' : 250,
-            'width' : 300,
-            'params' : {}
-          };
-        </script>
-        <script src="https://bicea.org/22/4af63506f28601b29efaa5fa9bd07f42"></script>
+        <!-- Ad 3 Code Here -->
+        <p style="font-size:10px; color:#999; margin:0;">Ad 3</p>
     </div>
 
-    <script>
-        let timeLeft = 8;
-        const timerText = document.getElementById("timerText");
-        const downloadBtn = document.getElementById("downloadBtn");
-        const downloadLink = document.getElementById("downloadLink");
+    <!-- Adsterra Banner Ad 4 -->
+    <div class="ad-container">
+        <!-- Ad 4 Code Here -->
+        <p style="font-size:10px; color:#999; margin:0;">Ad 4</p>
+    </div>
 
-        const countdown = setInterval(() => {
-            timeLeft--;
-            if (timeLeft > 0) {
-                timerText.innerHTML = `डाउनलोड लिंक <b>${timeLeft}</b> सेकंड में तैयार हो जाएगा...`;
-            } else {
-                clearInterval(countdown);
-                timerText.innerHTML = "आपका लिंक तैयार है!";
-                downloadBtn.innerText = "अब डाउनलोड करें";
-                downloadBtn.classList.add("active");
-                downloadBtn.removeAttribute("disabled");
-                // ऐप का प्ले स्टोर लिंक यहाँ जोड़ दिया गया है
-                downloadLink.href = "https://play.google.com/store/apps/details?id=com.aiedit.canvas"; 
-            }
-        }, 1000);
-    </script>
+    <!-- Adsterra Banner Ad 5 -->
+    <div class="ad-container">
+        <!-- Ad 5 Code Here -->
+        <p style="font-size:10px; color:#999; margin:0;">Ad 5</p>
+    </div>
+
+    <!-- Adsterra Banner Ad 6 -->
+    <div class="ad-container">
+        <!-- Ad 6 Code Here -->
+        <p style="font-size:10px; color:#999; margin:0;">Ad 6</p>
+    </div>
+</div>
+
+<script>
+    var timeLeft = 8;
+    var timerElement = document.getElementById("timer");
+    var downloadSection = document.getElementById("download-section");
+
+    var countdown = setInterval(function() {
+        timeLeft--;
+        timerElement.textContent = timeLeft;
+        if (timeLeft <= 0) {
+            clearInterval(countdown);
+            timerElement.parentElement.style.display = "none";
+            downloadSection.style.display = "block";
+            
+            // अपना असली ऐप डाउनलोड लिंक यहाँ डालें
+            document.getElementById("final-link").href = "https://example.com/real-app-download-link";
+        }
+    }, 1000);
+</script>
 
 </body>
 </html>
