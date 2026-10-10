@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+        }
+        .ad-container {
+            margin: 15px auto;
+            min-height: 250px;
+        }
+        .download-box {
+            margin: 30px 0;
+        }
+        #downloadBtn {
+            background-color: #cccccc;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: not-allowed;
+            transition: background-color 0.3s;
+        }
+        #downloadBtn.active {
+            background-color: #28a745;
+            cursor: pointer;
+        }
+        #timerText {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>अपने ऐप का आनंद लें</h1>
+    <p>कृपया नीचे दिए गए टाइमर के पूरा होने का इंतज़ार करें।</p>
+
+    <!-- टॉप बैनर ऐड -->
+    <div class="ad-container">
+        <script>
+          atOptions = {
+            'key' : '4af63506f28601b29efaa5fa9bd07f42',
+            'format' : 'iframe',
+            'height' : 250,
+            'width' : 300,
+            'params' : {}
+          };
+        </script>
+        <script src="https://bicea.org/22/4af63506f28601b29efaa5fa9bd07f42"></script>
+    </div>
+
+    <!-- बीच का बैनर ऐड -->
+    <div class="ad-container">
+        <script>
+          atOptions = {
+            'key' : '4af63506f28601b29efaa5fa9bd07f42',
+            'format' : 'iframe',
+            'height' : 250,
+            'width' : 300,
+            'params' : {}
+          };
+        </script>
+        <script src="https://bicea.org/22/4af63506f28601b29efaa5fa9bd07f42"></script>
+    </div>
+
+    <!-- डाउनलोड बटन और 8 सेकंड का टाइमर -->
+    <div class="download-box">
+        <div id="timerText">डाउनलोड लिंक <b>8</b> सेकंड में तैयार हो जाएगा...</div>
+        <a id="downloadLink" href="#" style="text-decoration: none;" target="_blank">
+            <button id="downloadBtn" disabled>डाउनलोड ऐप</button>
+        </a>
+    </div>
+
+    <!-- बॉटम बैनर ऐड -->
+    <div class="ad-container">
+        <script>
+          atOptions = {
+            'key' : '4af63506f28601b29efaa5fa9bd07f42',
+            'format' : 'iframe',
+            'height' : 250,
+            'width' : 300,
+            'params' : {}
+          };
+        </script>
+        <script src="https://bicea.org/22/4af63506f28601b29efaa5fa9bd07f42"></script>
+    </div>
+
+    <script>
+        let timeLeft = 8;
+        const timerText = document.getElementById("timerText");
+        const downloadBtn = document.getElementById("downloadBtn");
+        const downloadLink = document.getElementById("downloadLink");
+
+        const countdown = setInterval(() => {
+            timeLeft--;
+            if (timeLeft > 0) {
+                timerText.innerHTML = `डाउनलोड लिंक <b>${timeLeft}</b> सेकंड में तैयार हो जाएगा...`;
+            } else {
+                clearInterval(countdown);
+                timerText.innerHTML = "आपका लिंक तैयार है!";
+                downloadBtn.innerText = "अब डाउनलोड करें";
+                downloadBtn.classList.add("active");
+                downloadBtn.removeAttribute("disabled");
+                // ऐप का प्ले स्टोर लिंक यहाँ जोड़ दिया गया है
+                downloadLink.href = "https://play.google.com/store/apps/details?id=com.aiedit.canvas"; 
+            }
+        }, 1000);
+    </script>
+
+</body>
+</html>
