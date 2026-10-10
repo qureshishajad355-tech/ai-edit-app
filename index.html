@@ -3,134 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Edit App - Download</title>
+    <title>Download App</title>
+    <!-- HilltopAds Verification Meta Tag -->
+    <meta name="73a1e7d43491a7b9845a7cfed1853e2c419465a8" content="73a1e7d43491a7b9845a7cfed1853e2c419465a8" />
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f7f6;
+            background-color: #f4f4f9;
             margin: 0;
             padding: 10px;
-            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
         .container {
-            max-width: 500px;
-            margin: 0 auto;
+            width: 100%;
+            max-width: 400px;
             background: #ffffff;
             padding: 15px;
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            text-align: center;
         }
-        h1 {
+        h2 {
+            font-size: 18px;
             color: #333;
-            font-size: 20px;
+            margin-bottom: 10px;
         }
-        p {
-            color: #666;
-            font-size: 14px;
-        }
-        .ad-container {
-            margin: 8px 0;
-            padding: 5px;
-            background: #fafafa;
-            border: 1px dashed #ddd;
-            border-radius: 5px;
-            max-height: 90px;
-            overflow: hidden;
-        }
-        #download-section {
-            display: none;
-            margin: 15px 0;
+        #timer-text {
+            font-size: 15px;
+            color: #555;
+            margin-bottom: 15px;
         }
         .download-btn {
+            display: none;
             background-color: #28a745;
             color: white;
-            padding: 12px 25px;
+            padding: 12px 20px;
             font-size: 16px;
             font-weight: bold;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
             text-decoration: none;
-            display: inline-block;
-            box-shadow: 0 4px 6px rgba(40, 167, 69, 0.3);
+            border-radius: 5px;
+            margin-bottom: 15px;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.15);
         }
         .download-btn:hover {
             background-color: #218838;
         }
-        #timer {
-            font-weight: bold;
-            color: #d9534f;
-            font-size: 18px;
+        .ad-box {
+            width: 100%;
+            height: 60px;
+            background: #f9f9f9;
+            border: 1px dashed #ccc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+            color: #888;
+            font-size: 14px;
+            border-radius: 5px;
         }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <h1>AI Edit App डाउनलोड करने के लिए तैयार है</h1>
-    <p>कृपया <strong><span id="timer">8</span> सेकंड</strong> इंतज़ार करें।</p>
+    <div class="container">
+        <h2 id="heading">AI Edit App डाउनलोड करने के लिए तैयार है</h2>
+        <div id="timer-text">कृपया <span id="countdown">8</span> सेकंड इंतज़ार करें।</div>
 
-    <!-- 8 Sec Timer & Download Button Section (Placed near top as requested) -->
-    <div id="download-section">
-        <p style="color: green; font-weight: bold; margin: 5px;">आपका लिंक तैयार है!</p>
-        <a id="final-link" href="#" class="download-btn" target="_blank">डाउनलोड करें (Download)</a>
+        <!-- Download Button (Hidden initially) -->
+        <a id="downloadBtn" href="https://example.com/real-app-download-link" class="download-btn" target="_blank">डाउनलोड करें (Download)</a>
+
+        <!-- Ad Containers (3 Adsterra + 3 HilltopAds Placeholders) -->
+        <div class="ad-box">Ad 1</div>
+        <div class="ad-box">Ad 2</div>
+        <div class="ad-box">Ad 3</div>
+        <div class="ad-box">Ad 4</div>
+        <div class="ad-box">Ad 5</div>
+        <div class="ad-box">Ad 6</div>
     </div>
 
-    <!-- Adsterra Banner Ad 1 -->
-    <div class="ad-container">
-        <!-- Ad 1 Code Here -->
-        <p style="font-size:10px; color:#999; margin:0;">Ad 1</p>
-    </div>
+    <script>
+        let timeLeft = 8;
+        const countdownElement = document.getElementById("countdown");
+        const downloadBtn = document.getElementById("downloadBtn");
+        const timerText = document.getElementById("timer-text");
 
-    <!-- Adsterra Banner Ad 2 -->
-    <div class="ad-container">
-        <!-- Ad 2 Code Here -->
-        <p style="font-size:10px; color:#999; margin:0;">Ad 2</p>
-    </div>
-
-    <!-- Adsterra Banner Ad 3 -->
-    <div class="ad-container">
-        <!-- Ad 3 Code Here -->
-        <p style="font-size:10px; color:#999; margin:0;">Ad 3</p>
-    </div>
-
-    <!-- Adsterra Banner Ad 4 -->
-    <div class="ad-container">
-        <!-- Ad 4 Code Here -->
-        <p style="font-size:10px; color:#999; margin:0;">Ad 4</p>
-    </div>
-
-    <!-- Adsterra Banner Ad 5 -->
-    <div class="ad-container">
-        <!-- Ad 5 Code Here -->
-        <p style="font-size:10px; color:#999; margin:0;">Ad 5</p>
-    </div>
-
-    <!-- Adsterra Banner Ad 6 -->
-    <div class="ad-container">
-        <!-- Ad 6 Code Here -->
-        <p style="font-size:10px; color:#999; margin:0;">Ad 6</p>
-    </div>
-</div>
-
-<script>
-    var timeLeft = 8;
-    var timerElement = document.getElementById("timer");
-    var downloadSection = document.getElementById("download-section");
-
-    var countdown = setInterval(function() {
-        timeLeft--;
-        timerElement.textContent = timeLeft;
-        if (timeLeft <= 0) {
-            clearInterval(countdown);
-            timerElement.parentElement.style.display = "none";
-            downloadSection.style.display = "block";
-            
-            // अपना असली ऐप डाउनलोड लिंक यहाँ डालें
-            document.getElementById("final-link").href = "https://example.com/real-app-download-link";
-        }
-    }, 1000);
-</script>
+        let downloadTimer = setInterval(function() {
+            timeLeft--;
+            countdownElement.textContent = timeLeft;
+            if (timeLeft <= 0) {
+                clearInterval(downloadTimer);
+                timerText.innerHTML = "आपका लिंक तैयार है!";
+                downloadBtn.style.display = "block";
+            }
+        }, 1000);
+    </script>
 
 </body>
 </html>
